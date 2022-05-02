@@ -1,13 +1,15 @@
-﻿<div>
+﻿@{
+    Layout = "_LayoutHead"; }
+<div>
     Admin Section
 </div>
 <div>
-    @await RenderSectionAsync("TopContent", required: false) 
+    @await RenderSectionAsync("TopContent", required: false)
 </div>
-<div>
+<div style="margin-top:50px;">
     @RenderBody()
 </div>
 <div style="margin-top:50px;">
-    @await RenderSectionAsync("Footer", required: false) 
-    Copyright PW3 - 2022 
+    @await RenderSectionAsync("Footer", required: false)
+    Copyright PW3 - 2022
 </div>
