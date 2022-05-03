@@ -20,8 +20,12 @@ namespace Clase_Layouts_PV_Valid.Controllers
         [HttpPost]
         public IActionResult Nuevo(Models.Usuario usuario)
         {
+            if (ModelState.IsValid)
+            {
             _listaUsuarios.Add(usuario); 
             return RedirectToAction(nameof(Lista));
+            }
+            return View(usuario);
         }
         public IActionResult Lista()
         {

@@ -1,16 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Usuario;
 @{
+    Layout = "_AdminLayout";
 }
+@section Footer{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}
+
 <form action="/usuarios/nuevo" method="post">
     <div>
-        Nombre: <input type="text" name="Nombre" />
-        AvatarURL: <input type="text" name="AvatarURL" />
-        Email: <input type="text" name="Email" />
-        Puntos: <input type="text" name="Puntos" />
-
+        Nombre: <input asp-for="Nombre"/>
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div>
+        AvatarURL: <input asp-for="AvatarURL" />
+        <span asp-validation-for="AvatarURL" class="text-danger"></span>
 
     </div>
+    <div>
+        Email: <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+    </div>
+    <div>
+        Puntos: <input asp-for="Puntos" />
+        <span asp-validation-for="Puntos" class="text-danger"></span>
+
+    </div>
+
     <input type="submit" value="Guardar" />
 </form>
